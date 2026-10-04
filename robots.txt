@@ -1,0 +1,18 @@
+# Publish at the origin root: https://YOUR-DOMAIN/robots.txt
+# These paths assume the website is served at the domain root.
+# For GitHub Pages project sites, see README.md before publishing.
+# Home (including query strings) and Research: opt out of AI training.
+# Google-Extended also controls certain Gemini grounding uses.
+
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+Disallow: /$
+Disallow: /?
+Disallow: /index.html
+Disallow: /research.html
+
+# Allow search crawlers to read the noindex directives in HTML/HTTP headers.
+# Do not replace this with Disallow: /; blocking crawling can prevent deindexing.
+User-agent: *
+Allow: /
