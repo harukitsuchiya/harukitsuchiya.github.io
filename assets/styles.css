@@ -44,12 +44,6 @@ main { padding-top: 64px; padding-bottom: 65px; }
 .paper-title { font-size: 1.9375rem; color: var(--blue); line-height: 1.22; }
 .paper-status { margin-top: 4px; }
 .paper-abstract { margin-top: 7px; }
-/* Discourage ordinary selection of this abstract only; not access control. */
-.page-research #sherlocking .paper-abstract {
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-}
 .coauthors { margin-top: 5px; }
 .paper-links:empty { display: none; }
 .paper-links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 12px; }
