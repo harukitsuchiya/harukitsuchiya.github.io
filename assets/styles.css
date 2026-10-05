@@ -109,6 +109,7 @@ address { font-style: normal; }
 @media (max-width: 760px) {
   body { font-size: 1.125rem; line-height: 1.5; }
   .container { width: calc(100% - 36px); }
+  .site-header { position: relative; }
   .header-inner { min-height: 58px; flex-wrap: wrap; gap: 0; padding-top: 0; }
   .site-name { font-size: 1.375rem; padding-block: 15px; }
   .header-inner.nav-ready .menu-toggle {
@@ -120,6 +121,12 @@ address { font-style: normal; }
   nav { width: calc(100% + 36px); flex-basis: calc(100% + 36px); flex-shrink: 0;
     margin-inline: -18px; padding: 8px 18px 14px; flex-direction: column; align-items: stretch; gap: 0;
     border-top: 1px solid var(--rule); }
+  /* Keep the no-JavaScript navigation in flow; enhanced menus cover the content. */
+  .header-inner.nav-ready nav {
+    position: absolute; top: 100%; left: 0; z-index: 20;
+    width: 100%; margin-inline: 0; background: var(--background);
+    border-bottom: 1px solid var(--rule);
+  }
   nav a { font-size: 1rem; min-height: 44px; padding: 10px 0; }
   nav a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; text-decoration-skip-ink: none; }
   nav a[aria-current="page"]::after { display: none; }
@@ -199,7 +206,7 @@ address { font-style: normal; }
 /* A short entrance only when the mobile menu opens; respect reduced motion. */
 @media screen and (max-width: 760px) and (prefers-reduced-motion: no-preference) {
   .nav-ready[data-nav-open="true"] nav {
-    animation: mobile-menu-enter 180ms ease-out;
+    animation: mobile-menu-enter 300ms ease-in;
   }
 }
 @keyframes mobile-menu-enter {
