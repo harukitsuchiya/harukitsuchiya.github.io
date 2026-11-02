@@ -7,7 +7,8 @@
   --muted: #616b7e;
   --blue: #175fc7;
   --rule: #e8ebf0;
-  --width: 960px;
+  --width: 1040px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
 }
 * { box-sizing: border-box; }
 html { overflow-y: scroll; }
@@ -15,7 +16,8 @@ body { margin: 0; background: var(--background); color: var(--body); font-family
 a { color: var(--blue); text-decoration: none; text-underline-offset: .18em; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; }
-.container { width: min(79%, var(--width)); margin-inline: auto; }
+/* Share the reference site's wider frame across the header and page content. */
+.container { width: min(calc(100% - 2 * var(--gutter)), var(--width)); margin-inline: auto; }
 h1, h2, h3, p, dl, dd { margin: 0; }
 h1, h2, h3 { font-weight: 400; line-height: 1.15; }
 h1, h2 { color: var(--ink); }
@@ -101,7 +103,6 @@ address { font-style: normal; }
 }
 /* Mobile layout follows the supplied phone references. Site content is unchanged. */
 @media (max-width: 760px) {
-  .container { width: calc(100% - 36px); }
   .site-header { position: relative; }
   .header-inner { min-height: 58px; flex-wrap: wrap; gap: 0; padding-top: 0; }
   .site-name { padding-block: 15px; }
@@ -111,8 +112,8 @@ address { font-style: normal; }
     border: 0; background: transparent; color: var(--body); cursor: pointer;
   }
   .menu-toggle span { display: block; width: 23px; height: 1.5px; background: currentColor; }
-  nav { width: calc(100% + 36px); flex-basis: calc(100% + 36px); flex-shrink: 0;
-    margin-inline: -18px; padding: 8px 18px 14px; flex-direction: column; align-items: stretch; gap: 0;
+  nav { width: calc(100% + 2 * var(--gutter)); flex-basis: calc(100% + 2 * var(--gutter)); flex-shrink: 0;
+    margin-inline: calc(-1 * var(--gutter)); padding: 8px var(--gutter) 14px; flex-direction: column; align-items: stretch; gap: 0;
     border-top: 1px solid var(--rule); }
   /* Keep the no-JavaScript navigation in flow; enhanced menus cover the content. */
   .header-inner.nav-ready nav {
@@ -128,7 +129,7 @@ address { font-style: normal; }
   .page-title { margin-bottom: 28px; }
   .page-home main { padding-top: 0; }
   .hero { grid-template-columns: minmax(0, 1fr); gap: 12px; padding-bottom: 25px; }
-  .hero-photo { order: -1; width: calc(100% + 36px); margin-inline: -18px;
+  .hero-photo { order: -1; width: calc(100% + 2 * var(--gutter)); margin-inline: calc(-1 * var(--gutter));
     aspect-ratio: 2 / 1; border-radius: 0; }
   .hero-photo img { object-position: center 55%; }
   .hero h1 { letter-spacing: -.02em; margin-bottom: 3px; }
@@ -181,9 +182,6 @@ address { font-style: normal; }
   .profiles { gap: 0 10px; }
 }
 @media (max-width: 360px) {
-  .container { width: calc(100% - 32px); }
-  nav { width: calc(100% + 32px); flex-basis: calc(100% + 32px); margin-inline: -16px; padding-inline: 16px; gap: 0; }
-  .hero-photo { width: calc(100% + 32px); margin-inline: -16px; }
   .dated-row { gap: 12px; }
   .page-cv .dated-row { gap: 4px; }
   .interests > div { grid-template-columns: 95px minmax(0, 1fr); gap: 6px; }
