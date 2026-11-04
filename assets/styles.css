@@ -147,7 +147,7 @@ address { font-style: normal; }
   nav a::after { display: none; }
   .nav-ready[data-nav-open="false"] nav { display: none; }
   main { padding-top: 28px; padding-bottom: 44px; }
-  .page-title { margin-bottom: 24px; }
+  .page-title { margin-bottom: 40px; }
   .page-home main { padding-top: 0; }
   .hero { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-bottom: 28px; }
   .hero-photo { order: -1; width: calc(100% + 2 * var(--gutter)); margin-inline: calc(-1 * var(--gutter));
@@ -177,7 +177,7 @@ address { font-style: normal; }
   .contact-row dd { margin-top: 3px; margin-left: 0; }
   .contact-icon { display: none; }
   .contact-row + .contact-row { margin-top: 28px; }
-  .page-contact .page-title { margin-bottom: 0; padding-bottom: 20px; }
+  .page-contact .page-title { margin-bottom: 0; padding-bottom: 40px; }
   .contact-location { display: block; border-top: 0; }
   .page-contact .contact-row { border-top: 1px solid var(--rule); padding: 21px 0 23px; }
   .page-contact .contact-row dt { font-size: 1.125rem; }
@@ -190,7 +190,7 @@ address { font-style: normal; }
   .page-contact .profiles { flex-direction: column; align-items: flex-start; gap: 3px; }
   .page-contact .profiles > [aria-hidden="true"] { display: none; }
   .contact-layout > .contact-details:last-child { border-bottom: 0; }
-  .page-heading { display: block; margin-bottom: 25px; }
+  .page-heading { display: block; margin-bottom: 28px; }
   .page-heading .page-title { margin-bottom: 12px; }
   .pdf-download { display: inline-block; padding: 0; }
   .page-cv .dated-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
