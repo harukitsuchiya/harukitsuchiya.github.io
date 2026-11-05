@@ -186,7 +186,7 @@ address { font-style: normal; }
   .contact-layout > .contact-details:first-child .contact-row { border-top: 0; }
   .contact-location .contact-row:first-child { border-top: 1px solid var(--rule); }
   .contact-map { margin: 0 0 27px; }
-  .contact-map iframe { height: auto; aspect-ratio: 1.9; min-height: 170px; }
+  .contact-map iframe { height: 240px; }
   .page-contact .profiles { flex-direction: column; align-items: flex-start; gap: 3px; }
   .page-contact .profiles > [aria-hidden="true"] { display: none; }
   .contact-layout > .contact-details:last-child { border-bottom: 0; }
