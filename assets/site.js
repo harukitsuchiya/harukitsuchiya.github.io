@@ -61,6 +61,16 @@
     });
   });
 
+  // Keep keyboard focus out of clipped third-party controls, including after a
+  // pointer click. Keyboard visitors use the adjacent full-map link instead.
+  const contactMap = document.querySelector(".contact-map");
+  const contactMapFrame = contactMap?.querySelector("iframe");
+  if (contactMapFrame) {
+    window.addEventListener("blur", () => window.setTimeout(() => {
+      if (document.activeElement === contactMapFrame) contactMap.focus({ preventScroll: true });
+    }, 0));
+  }
+
   // Animate only when an item enters view. Content is never hidden in the
   // stylesheet, so it remains readable without JS, during search, and on print.
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
